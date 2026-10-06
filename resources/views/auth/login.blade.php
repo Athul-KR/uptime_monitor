@@ -8,9 +8,9 @@
     <form method="POST" action="{{ route('login') }}" class="grid gap-5">
         @csrf
 
-        <x-form.input name="email" type="email" label="Email address" placeholder="you@company.com" autocomplete="email" required autofocus />
+        <x-form.input name="email" type="email" label="Email address" placeholder="you@company.com" autocomplete="email"  autofocus />
 
-        <x-form.input name="password" type="password" label="Password" placeholder="••••••••" autocomplete="current-password" required />
+        <x-form.input name="password" type="password" label="Password" placeholder="••••••••" autocomplete="current-password"  />
 
         <label class="flex items-center gap-2.5 text-sm text-zinc-600 dark:text-zinc-400">
             <input type="checkbox" name="remember" class="size-4 rounded accent-emerald-600" @checked(old('remember'))>

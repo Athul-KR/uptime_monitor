@@ -2,13 +2,13 @@
     <form method="POST" action="{{ route('register') }}" class="grid gap-5">
         @csrf
 
-        <x-form.input name="name" label="Full name" placeholder="Jane Doe" autocomplete="name" required autofocus />
+        <x-form.input name="name" label="Full name" placeholder="Jane Doe" autocomplete="name"  autofocus />
 
-        <x-form.input name="email" type="email" label="Email address" placeholder="you@company.com" autocomplete="email" required />
+        <x-form.input name="email" type="email" label="Email address" placeholder="you@company.com" autocomplete="email"  />
 
-        <x-form.input name="password" type="password" label="Password" placeholder="At least 8 characters" autocomplete="new-password" required />
+        <x-form.input name="password" type="password" label="Password" placeholder="At least 8 characters" autocomplete="new-password"  />
 
-        <x-form.input name="password_confirmation" type="password" label="Confirm password" placeholder="Repeat your password" autocomplete="new-password" required />
+        <x-form.input name="password_confirmation" type="password" label="Confirm password" placeholder="Repeat your password" autocomplete="new-password"  />
 
         <x-form.button class="mt-1">Create account</x-form.button>
     </form>
