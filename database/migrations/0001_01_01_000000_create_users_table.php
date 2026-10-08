@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('user_uuid')->unique()->nullable();
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('telegram_chat_id');
+            $table->integer('telegram_chat_id')->nullable()->comment('Telegram chat ID for notifications');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->tinyInteger('status')->default(1)->comment('0 = pending, 1 = active, -1 = inactive');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

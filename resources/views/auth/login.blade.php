@@ -12,10 +12,14 @@
 
         <x-form.input name="password" type="password" label="Password" placeholder="••••••••" autocomplete="current-password"  />
 
-        <label class="flex items-center gap-2.5 text-sm text-zinc-600 dark:text-zinc-400">
-            <input type="checkbox" name="remember" class="size-4 rounded accent-emerald-600" @checked(old('remember'))>
-            Remember me
-        </label>
+        <div class="flex items-center justify-between">
+            <label class="flex items-center gap-2.5 text-sm text-zinc-600 dark:text-zinc-400">
+                <input type="checkbox" name="remember" class="size-4 rounded accent-emerald-600" @checked(old('remember'))>
+                Remember me
+            </label>
+
+            <a href="{{ route('password.request') }}" class="text-sm font-medium text-emerald-600 hover:text-emerald-500 dark:text-emerald-400">Forgot password?</a>
+        </div>
 
         <x-form.button class="mt-1">Log in</x-form.button>
     </form>

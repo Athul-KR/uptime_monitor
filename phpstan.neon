@@ -1,0 +1,9 @@
+# Larastan settings. Install first with: composer require --dev larastan/larastan
+# Start at level 5. Raise it to 6 or higher once the project is stable.
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+    level: 5

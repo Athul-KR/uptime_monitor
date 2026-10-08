@@ -1,4 +1,4 @@
-@props(['name', 'label', 'type' => 'text'])
+@props(['name', 'label', 'type' => 'text', 'value' => null])
 
 <div class="grid gap-1.5">
     <label for="{{ $name }}" class="text-sm font-medium text-zinc-700 dark:text-zinc-300">{{ $label }}</label>
@@ -7,7 +7,7 @@
         id="{{ $name }}"
         name="{{ $name }}"
         type="{{ $type }}"
-        @if ($type !== 'password') value="{{ old($name) }}" @endif
+        @if ($type !== 'password') value="{{ old($name, $value) }}" @endif
         @error($name) aria-invalid="true" aria-describedby="{{ $name }}-error" @enderror
         {{ $attributes->class([
             'block w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-zinc-900 shadow-xs outline-hidden transition placeholder:text-zinc-400 focus:ring-4 dark:bg-zinc-900 dark:text-zinc-100 dark:placeholder:text-zinc-500',
